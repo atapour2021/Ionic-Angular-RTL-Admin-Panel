@@ -11,12 +11,16 @@ export class ApplicationComponent implements OnInit {
   isDarkMode: string | null = null;
   dictionary = dictionary;
   appPages = [
-    { title: 'Inbox', url: '/app/folder/inbox', icon: 'mail' },
-    { title: 'Outbox', url: '/app/folder/outbox', icon: 'paper-plane' },
-    { title: 'Favorites', url: '/app/folder/favorites', icon: 'heart' },
-    { title: 'Archived', url: '/app/folder/archived', icon: 'archive' },
-    { title: 'Trash', url: '/app/folder/trash', icon: 'trash' },
-    { title: 'Spam', url: '/app/folder/spam', icon: 'warning' },
+    {
+      title: dictionary.Dashboard,
+      url: '/app/dashboard',
+      icon: 'grid',
+    },
+    // { title: 'Outbox', url: '/app/folder/outbox', icon: 'paper-plane' },
+    // { title: 'Favorites', url: '/app/folder/favorites', icon: 'heart' },
+    // { title: 'Archived', url: '/app/folder/archived', icon: 'archive' },
+    // { title: 'Trash', url: '/app/folder/trash', icon: 'trash' },
+    // { title: 'Spam', url: '/app/folder/spam', icon: 'warning' },
   ];
 
   constructor() {}

@@ -11,4 +11,10 @@ export const CONTENT_ROUTES: Routes = [
     loadChildren: () =>
       import('@modules/index').then((m) => m.FolderPageModule),
   },
+
+  {
+    path: 'dashboard',
+    loadChildren: () =>
+      import('@app/modules').then((m) => m.DashboardPageModule),
+  },
 ];
