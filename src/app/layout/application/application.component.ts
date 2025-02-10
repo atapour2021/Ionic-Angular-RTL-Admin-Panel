@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { dictionary } from '@dictionary/dictionary';
 
 @Component({
   selector: 'app-application',
@@ -7,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
   standalone: false,
 })
 export class ApplicationComponent implements OnInit {
+  isDarkMode: string | null = null;
+  dictionary = dictionary;
   appPages = [
     { title: 'Inbox', url: '/app/folder/inbox', icon: 'mail' },
     { title: 'Outbox', url: '/app/folder/outbox', icon: 'paper-plane' },
@@ -15,9 +18,20 @@ export class ApplicationComponent implements OnInit {
     { title: 'Trash', url: '/app/folder/trash', icon: 'trash' },
     { title: 'Spam', url: '/app/folder/spam', icon: 'warning' },
   ];
-  labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.isDarkMode = localStorage.getItem('dark-mode');
+    if (this.isDarkMode === 'enabled') {
+      document.body.classList.add('dark-theme');
+    }
+  }
+
+  toggleDarkMode() {
+    const body = document.body;
+    const darkMode = body.classList.toggle('dark-theme');
+    this.isDarkMode = darkMode ? 'enabled' : 'disabled';
+    localStorage.setItem('dark-mode', darkMode ? 'enabled' : 'disabled');
+  }
 }
