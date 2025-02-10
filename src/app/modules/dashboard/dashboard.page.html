@@ -10,29 +10,16 @@
   <ion-grid>
     <ion-row>
       <ion-col sizeMd="6" size="12">
-        <ion-card>
+        <ion-card class="sales__card">
           <ion-card-header>
-            <ion-card-title color="dark">Sales Chart</ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-            <div id="treemap-chart-container"></div>
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-      <ion-col sizeMd="6" size="12">
-        <ion-card>
-          <ion-card-header>
-            <ion-card-title color="dark">Sales Chart</ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-            <div id="map-chart-container"></div>
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-      <ion-col sizeMd="6" size="12">
-        <ion-card>
-          <ion-card-header>
-            <ion-card-title color="dark">Sales Chart</ion-card-title>
+            <div class="header">
+              <ion-card-title color="dark"
+                >{{dictionary.TotalSales}}</ion-card-title
+              >
+              <ion-card-title color="dark" class="persian-number">
+                {{price | number | persianNumber}}
+              </ion-card-title>
+            </div>
           </ion-card-header>
           <ion-card-content>
             <div id="highchart-container"></div>
@@ -42,10 +29,38 @@
       <ion-col sizeMd="6" size="12">
         <ion-card>
           <ion-card-header>
-            <ion-card-title color="dark">Sales Chart</ion-card-title>
+            <ion-card-title color="dark">
+              {{dictionary.ProductsSalesRatio}}
+            </ion-card-title>
           </ion-card-header>
           <ion-card-content>
-            <div id="pie-chart-container"></div>
+            <div id="treemap-chart-container"></div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <ion-card>
+          <ion-card-header>{{dictionary.Transactions}}</ion-card-header>
+          <ion-card-content>
+            <ngx-datatable
+              [rows]="transactions"
+              [columns]="columns"
+              [columnMode]="'force'"
+              [headerHeight]="50"
+              [footerHeight]="50"
+              [rowHeight]="'auto'"
+              [limit]="10"
+              [count]="transactions.length"
+              class="material"
+            />
+
+            <ng-template #imageTpl let-row="row">
+              <div style="background-color: transparent">
+                <img [src]="row.productImage" width="50" height="50" />
+              </div>
+            </ng-template>
           </ion-card-content>
         </ion-card>
       </ion-col>

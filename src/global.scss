@@ -48,3 +48,15 @@ body {
   padding: 0;
   font-family: "Vazirmatn", sans-serif;
 }
+
+.persian-number {
+  font-family: "Vazirmatn", sans-serif;
+  direction: ltr;
+  unicode-bidi: bidi-override;
+}
+
+ngx-datatable {
+  font-family: "Vazirmatn", sans-serif;
+  direction: rtl;
+  text-align: right;
+}

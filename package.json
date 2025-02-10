@@ -29,6 +29,7 @@
     "@fontsource/vazirmatn": "^5.1.1",
     "@highcharts/map-collection": "^2.3.0",
     "@ionic/angular": "^8.0.0",
+    "@swimlane/ngx-datatable": "^21.0.0-alpha.0",
     "highcharts": "^12.1.2",
     "ionicons": "^7.0.0",
     "rxjs": "~7.8.0",

@@ -8,6 +8,11 @@ import { ApplicationComponent } from '@app/layout';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import { registerLocaleData } from '@angular/common';
+import localeFa from '@angular/common/locales/fa';
+
+registerLocaleData(localeFa);
+
 @NgModule({
   declarations: [AppComponent, ApplicationComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
