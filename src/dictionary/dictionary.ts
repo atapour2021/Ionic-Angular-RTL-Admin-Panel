@@ -18,4 +18,10 @@ export enum dictionary {
   Transactions = 'تراکنش ها',
   TotalEarnings = 'کل درآمد',
   ViewNetEarnings = 'مشاهده درآمد خالص',
+  Orders = 'سفارشات',
+  ViewAllOrders = 'مشاهده تمامی سفارشات',
+  Customers = 'مشتریان',
+  SeeDetails = 'جزئیات را ببینید',
+  GoodMorning = 'صبح بخیر',
+  HeresWhatsHappeningWithYourStoreToday = 'این چیزی است که امروز در فروشگاه شما اتفاق می افتد',
 }

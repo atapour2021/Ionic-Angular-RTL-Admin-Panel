@@ -9,177 +9,139 @@
 <ion-content [fullscreen]="true">
   <ion-grid>
     <ion-row>
-      <ion-col size="12" sizeMd="6" sizeLg="4">
-        <ion-card class="card__info card__bg__color">
-          <ion-card-content>
-            <ion-grid>
-              <ion-row>
-                <ion-col size="6">
-                  <ion-card-subtitle color="dark">
-                    {{dictionary.TotalEarnings}}
-                  </ion-card-subtitle>
-                </ion-col>
-                <ion-col class="flex__end" size="6">
-                  <span class="info__color">
-                    {{17.23 | number | persianNumber}}
-                    <ion-icon class="arrow-up" name="arrow-forward"></ion-icon>
-                    %
-                  </span>
-                </ion-col>
-                <ion-col size="12">
-                  <ion-card-title color="dark">
-                    {{totalEarnings | number | persianNumber}}
-                  </ion-card-title>
-                </ion-col>
-                <ion-col size="10">
-                  <div class="center">
-                    <ion-text color="dark">
-                      {{dictionary.ViewNetEarnings}}
-                    </ion-text>
-                  </div>
-                </ion-col>
-                <ion-col class="flex__end" size="2">
-                  <div class="cash__box">
-                    <ion-icon name="cash-outline"></ion-icon>
-                  </div>
-                </ion-col>
-              </ion-row>
-            </ion-grid>
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-      <ion-col size="12" sizeMd="6" sizeLg="4">
-        <ion-card class="card__info card__bg__color">
-          <ion-card-content>
-            <ion-grid>
-              <ion-row>
-                <ion-col size="6">
-                  <ion-card-subtitle color="dark">
-                    {{dictionary.TotalEarnings}}
-                  </ion-card-subtitle>
-                </ion-col>
-                <ion-col class="flex__end" size="6">
-                  <span class="info__color">
-                    {{17.23 | number | persianNumber}}
-                    <ion-icon class="arrow-up" name="arrow-forward"></ion-icon>
-                    %
-                  </span>
-                </ion-col>
-                <ion-col size="12">
-                  <ion-card-title color="dark">
-                    {{totalEarnings | number | persianNumber}}
-                  </ion-card-title>
-                </ion-col>
-                <ion-col size="10">
-                  <div class="center">
-                    <ion-text color="dark">
-                      {{dictionary.ViewNetEarnings}}
-                    </ion-text>
-                  </div>
-                </ion-col>
-                <ion-col class="flex__end" size="2">
-                  <div class="cash__box">
-                    <ion-icon name="cash-outline"></ion-icon>
-                  </div>
-                </ion-col>
-              </ion-row>
-            </ion-grid>
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-      <ion-col size="12" sizeMd="6" sizeLg="4">
-        <ion-card class="card__info card__bg__color">
-          <ion-card-content>
-            <ion-grid>
-              <ion-row>
-                <ion-col size="6">
-                  <ion-card-subtitle color="dark">
-                    {{dictionary.TotalEarnings}}
-                  </ion-card-subtitle>
-                </ion-col>
-                <ion-col class="flex__end" size="6">
-                  <span class="info__color">
-                    {{17.23 | number | persianNumber}}
-                    <ion-icon class="arrow-up" name="arrow-forward"></ion-icon>
-                    %
-                  </span>
-                </ion-col>
-                <ion-col size="12">
-                  <ion-card-title color="dark">
-                    {{totalEarnings | number | persianNumber}}
-                  </ion-card-title>
-                </ion-col>
-                <ion-col size="10">
-                  <div class="center">
-                    <ion-text color="dark">
-                      {{dictionary.ViewNetEarnings}}
-                    </ion-text>
-                  </div>
-                </ion-col>
-                <ion-col class="flex__end" size="2">
-                  <div class="cash__box">
-                    <ion-icon name="cash-outline"></ion-icon>
-                  </div>
-                </ion-col>
-              </ion-row>
-            </ion-grid>
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col sizeMd="6" size="12">
-        <ion-card class="sales__card card__bg__color">
-          <ion-card-header>
-            <div class="header">
-              <ion-card-title color="dark"
-                >{{dictionary.TotalSales}}</ion-card-title
-              >
-              <ion-card-title color="dark" class="persian-number">
-                {{price | number | persianNumber}}
-              </ion-card-title>
-            </div>
-          </ion-card-header>
-          <ion-card-content>
-            <div id="highchart-container"></div>
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-      <ion-col sizeMd="6" size="12">
-        <ion-card class="card__bg__color">
-          <ion-card-header>
+      <ion-col size="6">
+        <ion-row>
+          <ion-col size="12">
             <ion-card-title color="dark">
-              {{dictionary.ProductsSalesRatio}}
+              {{dictionary.GoodMorning}}
             </ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-            <div id="treemap-chart-container"></div>
-          </ion-card-content>
-        </ion-card>
+          </ion-col>
+          <ion-col size="12">
+            <ion-card-subtitle>
+              {{dictionary.HeresWhatsHappeningWithYourStoreToday}}.
+            </ion-card-subtitle>
+          </ion-col>
+        </ion-row>
       </ion-col>
     </ion-row>
     <ion-row>
-      <ion-col size="12">
-        <ion-card class="card__bg__color">
-          <ion-card-header>{{dictionary.Transactions}}</ion-card-header>
+      <ion-col size="12" sizeMd="4">
+        <ion-card class="card__info card__bg__color">
           <ion-card-content>
-            <ngx-datatable
-              [rows]="transactions"
-              [columns]="columns"
-              [columnMode]="'force'"
-              [headerHeight]="50"
-              [footerHeight]="50"
-              [rowHeight]="'auto'"
-              [limit]="10"
-              [count]="transactions.length"
-              class="material"
-            />
-
-            <ng-template #imageTpl let-row="row">
-              <div style="background-color: transparent">
-                <img [src]="row.productImage" width="50" height="50" />
-              </div>
-            </ng-template>
+            <ion-grid>
+              <ion-row>
+                <ion-col size="6">
+                  <ion-card-subtitle color="dark">
+                    {{dictionary.TotalEarnings}}
+                  </ion-card-subtitle>
+                </ion-col>
+                <ion-col class="flex__end" size="6">
+                  <span class="info__color">
+                    {{17.23 | number | persianNumber}}
+                    <ion-icon class="arrow-up" name="arrow-forward"></ion-icon>
+                    %
+                  </span>
+                </ion-col>
+                <ion-col size="12">
+                  <ion-card-title color="dark">
+                    {{totalEarnings | number | persianNumber}}
+                  </ion-card-title>
+                </ion-col>
+                <ion-col size="9">
+                  <div class="center">
+                    <ion-text color="dark">
+                      {{dictionary.ViewNetEarnings}}
+                    </ion-text>
+                  </div>
+                </ion-col>
+                <ion-col class="flex__end" size="3">
+                  <div class="cash__box">
+                    <ion-icon name="cash-outline"></ion-icon>
+                  </div>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="12" sizeMd="4">
+        <ion-card class="card__order card__bg__color">
+          <ion-card-content>
+            <ion-grid>
+              <ion-row>
+                <ion-col size="6">
+                  <ion-card-subtitle color="dark">
+                    {{dictionary.Orders}}
+                  </ion-card-subtitle>
+                </ion-col>
+                <ion-col class="flex__end" size="6">
+                  <span class="order__color">
+                    {{10.23 | number | persianNumber}}-
+                    <ion-icon
+                      class="arrow-down"
+                      name="arrow-forward"
+                    ></ion-icon>
+                    %
+                  </span>
+                </ion-col>
+                <ion-col size="12">
+                  <ion-card-title color="dark">
+                    {{orders | number | persianNumber}}
+                  </ion-card-title>
+                </ion-col>
+                <ion-col size="9">
+                  <div class="center">
+                    <ion-text color="dark">
+                      {{dictionary.ViewAllOrders}}
+                    </ion-text>
+                  </div>
+                </ion-col>
+                <ion-col class="flex__end" size="3">
+                  <div class="cash__box">
+                    <ion-icon name="receipt-outline"></ion-icon>
+                  </div>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="12" sizeMd="4">
+        <ion-card class="card__customer card__bg__color">
+          <ion-card-content>
+            <ion-grid>
+              <ion-row>
+                <ion-col size="6">
+                  <ion-card-subtitle color="dark">
+                    {{dictionary.Customers}}
+                  </ion-card-subtitle>
+                </ion-col>
+                <ion-col class="flex__end" size="6">
+                  <span class="customer__color">
+                    {{20 | number | persianNumber}}
+                    <ion-icon class="arrow-up" name="arrow-forward"></ion-icon>
+                    %
+                  </span>
+                </ion-col>
+                <ion-col size="12">
+                  <ion-card-title color="dark">
+                    {{customer | number | persianNumber}}
+                  </ion-card-title>
+                </ion-col>
+                <ion-col size="9">
+                  <div class="center">
+                    <ion-text color="dark">
+                      {{dictionary.SeeDetails}}
+                    </ion-text>
+                  </div>
+                </ion-col>
+                <ion-col class="flex__end" size="3">
+                  <div class="cash__box">
+                    <ion-icon name="person-outline"></ion-icon>
+                  </div>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
           </ion-card-content>
         </ion-card>
       </ion-col>

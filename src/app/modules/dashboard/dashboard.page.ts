@@ -24,6 +24,9 @@ export class DashboardPage implements OnInit {
 
   price = 180000000;
   totalEarnings = 553860000;
+  orders = 445500;
+  customer = 1230;
+  opmDatePicker = false;
 
   @ViewChild('imageTpl', { static: true }) imageTpl!: TemplateRef<any>;
 
