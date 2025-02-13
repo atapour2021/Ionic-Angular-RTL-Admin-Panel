@@ -36,10 +36,22 @@
               <ion-icon
                 aria-hidden="true"
                 slot="start"
+                [color]="
+                  isDarkMode === null || isDarkMode === 'disabled'
+                    ? 'light'
+                    : 'dark'
+                "
                 [ios]="p.icon + '-outline'"
                 [md]="p.icon + '-sharp'"
               ></ion-icon>
-              <ion-label>{{ p.title }}</ion-label>
+              <ion-label
+                [color]="
+                  isDarkMode === null || isDarkMode === 'disabled'
+                    ? 'light'
+                    : 'dark'
+                "
+                >{{ p.title }}</ion-label
+              >
             </ion-item>
           </ion-menu-toggle>
           }

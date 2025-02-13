@@ -1,6 +1,9 @@
 :root {
   --ion-background-color: #ffffff;
   --ion-text-color: #000000;
+  --ion-menu-background-color: #405189;
+  --ion-toolbar-bg-color: #ffff;
+  --ion-card-bg-color: #ffff;
 
   --ion-color-primary: #3880ff;
   --ion-color-primary-rgb: 56, 128, 255;
@@ -62,6 +65,9 @@
 .dark-theme {
   --ion-background-color: #121212;
   --ion-text-color: #ffffff;
+  --ion-menu-background-color: #212529;
+  --ion-toolbar-bg-color: #212529;
+  --ion-card-bg-color: #212529;
 
   --ion-color-primary: #428cff;
   --ion-color-primary-rgb: 66, 140, 255;

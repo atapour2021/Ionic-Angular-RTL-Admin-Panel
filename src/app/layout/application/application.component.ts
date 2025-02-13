@@ -16,11 +16,11 @@ export class ApplicationComponent implements OnInit {
       url: '/app/dashboard',
       icon: 'grid',
     },
-    // { title: 'Outbox', url: '/app/folder/outbox', icon: 'paper-plane' },
-    // { title: 'Favorites', url: '/app/folder/favorites', icon: 'heart' },
-    // { title: 'Archived', url: '/app/folder/archived', icon: 'archive' },
-    // { title: 'Trash', url: '/app/folder/trash', icon: 'trash' },
-    // { title: 'Spam', url: '/app/folder/spam', icon: 'warning' },
+    { title: 'Outbox', url: '/app/folder/outbox', icon: 'paper-plane' },
+    { title: 'Favorites', url: '/app/folder/favorites', icon: 'heart' },
+    { title: 'Archived', url: '/app/folder/archived', icon: 'archive' },
+    { title: 'Trash', url: '/app/folder/trash', icon: 'trash' },
+    { title: 'Spam', url: '/app/folder/spam', icon: 'warning' },
   ];
 
   constructor() {}

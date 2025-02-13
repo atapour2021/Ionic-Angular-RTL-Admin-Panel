@@ -23,6 +23,7 @@ export class DashboardPage implements OnInit {
   mapChartOptions: Highcharts.Options = {};
 
   price = 180000000;
+  totalEarnings = 553860000;
 
   @ViewChild('imageTpl', { static: true }) imageTpl!: TemplateRef<any>;
 

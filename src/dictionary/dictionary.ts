@@ -16,4 +16,6 @@ export enum dictionary {
   MobileSamsungS21 = 'S21 موبایل سامسونگ',
   MobileIPhone16 = 'IPhone 16 موبایل',
   Transactions = 'تراکنش ها',
+  TotalEarnings = 'کل درآمد',
+  ViewNetEarnings = 'مشاهده درآمد خالص',
 }

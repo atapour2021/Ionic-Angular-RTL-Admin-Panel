@@ -41,6 +41,10 @@
 @import "@fontsource/vazirmatn/700.css";
 @import "@fontsource/vazirmatn/index.css";
 
+:root {
+  --ion-font-family: "Vazirmatn", sans-serif;
+}
+
 body {
   width: 100%;
   height: 100%;
