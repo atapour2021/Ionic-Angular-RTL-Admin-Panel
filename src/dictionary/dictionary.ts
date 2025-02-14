@@ -1,4 +1,11 @@
 export enum dictionary {
+  Earnings = 'درآمد',
+  Refunds = 'بازپرداخت',
+  ConversionRatio = 'نسبت تبدیل',
+  All = 'همه',
+  Month = 'ماه',
+  Year = 'سال ',
+  Revenue = 'درآمد',
   UserName = 'نام کاربری',
   Dashboard = 'داشبورد',
   December = 'دی',

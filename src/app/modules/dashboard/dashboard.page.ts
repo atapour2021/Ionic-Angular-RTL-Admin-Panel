@@ -73,18 +73,35 @@ export class DashboardPage implements OnInit {
           fontFamily: 'Vazirmatn',
         },
       },
+      colors: [
+        '#4caefe',
+        '#3fbdf3',
+        '#35c3e8',
+        '#2bc9dc',
+        '#20cfe1',
+        '#16d4e6',
+        '#0dd9db',
+        '#03dfd0',
+        '#00e4c5',
+        '#00e9ba',
+        '#00eeaf',
+        '#23e274',
+      ],
       xAxis: {
         categories: [
-          dictionary.December,
-          dictionary.February,
-          dictionary.March,
+          'Jan',
+          'Feb',
+          'Mar',
+          'Apr',
+          'May',
+          'Jun',
+          'Jul',
+          'Aug',
+          'Sep',
+          'Oct',
+          'Nov',
+          'Dec',
         ],
-        labels: {
-          style: {
-            color: 'var(--ion-text-color)',
-            fontFamily: 'Vazirmatn',
-          },
-        },
       },
       yAxis: {
         title: {
@@ -97,9 +114,15 @@ export class DashboardPage implements OnInit {
       },
       series: [
         {
-          name: dictionary.Sales,
           type: 'column',
-          data: [50000000, 70000000, 60000000],
+          name: 'Unemployed',
+          borderRadius: 5,
+          colorByPoint: true,
+          data: [
+            2396, 2434, 2491, 2602, 2536, 2618, 2928, 2899, 2780, 2853, 2923,
+            2999,
+          ],
+          showInLegend: false,
         },
       ],
       credits: {

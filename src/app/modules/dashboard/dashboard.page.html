@@ -146,5 +146,77 @@
         </ion-card>
       </ion-col>
     </ion-row>
+    <ion-row>
+      <ion-col size="8">
+        <ion-card class="card__revenue">
+          <ion-card-content>
+            <ion-grid>
+              <ion-row>
+                <ion-col size="4">
+                  <ion-card-title class="center" color="dark">
+                    {{dictionary.Revenue}}
+                  </ion-card-title>
+                </ion-col>
+                <ion-col class="flex__end" size="8">
+                  <ion-button>
+                    {{1 | persianNumber}}{{dictionary.Year}}
+                  </ion-button>
+                  <ion-button>
+                    {{6 | persianNumber}}{{dictionary.Month}}
+                  </ion-button>
+                  <ion-button>
+                    {{3 | persianNumber}}{{dictionary.Month}}
+                  </ion-button>
+                  <ion-button>{{dictionary.All}}</ion-button>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col size="4">
+                  <ion-row>
+                    <ion-col class="ion-no-padding ion-no-margin" size="12">
+                      <ion-title color="dark">
+                        {{367 | persianNumber}}
+                      </ion-title>
+                    </ion-col>
+                    <ion-col class="ion-no-padding ion-no-margin" size="12">
+                      <ion-title color="dark">{{dictionary.Refunds}}</ion-title>
+                    </ion-col>
+                  </ion-row>
+                </ion-col>
+                <ion-col size="4">
+                  <ion-row>
+                    <ion-col class="ion-no-padding ion-no-margin" size="12">
+                      <ion-title color="dark">
+                        {{22000.89 | number | persianNumber }}
+                      </ion-title>
+                    </ion-col>
+                    <ion-col class="ion-no-padding ion-no-margin" size="12">
+                      <ion-title color="dark"
+                        >{{dictionary.Earnings}}</ion-title
+                      >
+                    </ion-col>
+                  </ion-row>
+                </ion-col>
+                <ion-col size="4">
+                  <ion-row>
+                    <ion-col class="ion-no-padding ion-no-margin" size="12">
+                      <ion-title color="dark">
+                        {{7585 | number | persianNumber }}
+                      </ion-title>
+                    </ion-col>
+                    <ion-col class="ion-no-padding ion-no-margin" size="12">
+                      <ion-title color="dark">{{dictionary.Orders}}</ion-title>
+                    </ion-col>
+                  </ion-row>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <div id="highchart-container"></div>
+              </ion-row>
+            </ion-grid>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
   </ion-grid>
 </ion-content>
