@@ -147,17 +147,17 @@
       </ion-col>
     </ion-row>
     <ion-row>
-      <ion-col size="8">
-        <ion-card class="card__revenue">
+      <ion-col sizeMd="8" size="12">
+        <ion-card class="card__revenue card__bg__color">
           <ion-card-content>
             <ion-grid>
               <ion-row>
-                <ion-col size="4">
+                <ion-col sizeMd="4" size="12">
                   <ion-card-title class="center" color="dark">
                     {{dictionary.Revenue}}
                   </ion-card-title>
                 </ion-col>
-                <ion-col class="flex__end" size="8">
+                <ion-col class="flex__end" sizeMd="8" size="12">
                   <ion-button>
                     {{1 | persianNumber}}{{dictionary.Year}}
                   </ion-button>
@@ -215,6 +215,65 @@
               </ion-row>
             </ion-grid>
           </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col sizeMd="4" size="12">
+        <ion-card class="card__bg__color">
+          <ion-card-content>
+            <ion-grid>
+              <ion-row>
+                <ion-col size="12">
+                  <highcharts-chart
+                    [Highcharts]="Highcharts"
+                    [constructorType]="'mapChart'"
+                    [options]="mapChartOptions"
+                    style="width: 100%; display: block"
+                  ></highcharts-chart>
+                </ion-col>
+                <ion-col size="12">
+                  <ion-label color="dark">{{dictionary.Tehran}}</ion-label>
+                  <ion-progress-bar value="0.5"></ion-progress-bar>
+                </ion-col>
+                <ion-col size="12">
+                  <ion-label color="dark">{{dictionary.Ahvaz}}</ion-label>
+                  <ion-progress-bar
+                    color="success"
+                    value="0.3"
+                  ></ion-progress-bar>
+                </ion-col>
+                <ion-col size="12">
+                  <ion-label color="dark">{{dictionary.Isfahan}}</ion-label>
+                  <ion-progress-bar
+                    color="warning"
+                    value="0.2"
+                  ></ion-progress-bar>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col sizeMd="4" size="12">
+        <ion-card class="card__bg__color">
+          <ion-card-content>
+            <ion-grid>
+              <ion-row>
+                <ion-col size="12">
+                  <highcharts-chart
+                    [Highcharts]="Highcharts"
+                    [constructorType]="'mapChart'"
+                    [options]="pieChartOptions"
+                    style="width: 100%; display: block"
+                  ></highcharts-chart>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col sizeMd="8" size="12">
+        <ion-card class="card__bg__color">
+          <ion-card-content> </ion-card-content>
         </ion-card>
       </ion-col>
     </ion-row>

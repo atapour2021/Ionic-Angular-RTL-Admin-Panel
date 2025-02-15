@@ -1,4 +1,13 @@
 export enum dictionary {
+  Electronics = 'الکترونیک',
+  Clothing = 'لباس',
+  Groceries = 'مواد غذایی',
+  Books = 'کتاب ها',
+  Other = 'دیگر',
+  StoreVisits = 'بازدید از فروشگاه',
+  Ahvaz = 'اهواز',
+  Isfahan = 'اصفهان',
+  Tehran = 'تهران',
   Earnings = 'درآمد',
   Refunds = 'بازپرداخت',
   ConversionRatio = 'نسبت تبدیل',
