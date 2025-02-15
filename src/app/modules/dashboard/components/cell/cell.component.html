@@ -1,0 +1,19 @@
+@if (params.column.colId === 'orderID') {
+<ion-label color="dark">{{ params.value | persianNumber }}</ion-label>
+} @else if (params.column.colId === 'image') {
+<div class="avatar__content">
+  <ion-avatar class="small-avatar">
+    <img [src]="params.value" />
+  </ion-avatar>
+</div>
+} @else if (params.column.colId === 'customer') {
+<ion-label color="dark">{{ params.value }}</ion-label>
+} @else if (params.column.colId === 'product') {
+<ion-label color="dark">{{ params.value }}</ion-label>
+} @else if (params.column.colId === 'vendor') {
+<ion-label color="dark">{{ params.value }}</ion-label>
+} @else if (params.column.colId === 'amount') {
+<ion-label color="dark">{{ params.value | number | persianNumber }}</ion-label>
+} @else if (params.column.colId === 'status') {
+<ion-label color="dark">{{ params.value }}</ion-label>
+}

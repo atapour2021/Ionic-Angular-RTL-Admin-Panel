@@ -6,6 +6,13 @@ import MapModule from 'highcharts/modules/map';
 import proj4 from 'proj4';
 import HC_map from 'highcharts/modules/map';
 import { style } from '@angular/animations';
+import {
+  ClientSideRowModelModule,
+  ColDef,
+  themeQuartz,
+} from 'ag-grid-community';
+import { CellComponent } from './components/cell/cell.component';
+import { LayoutService } from '@app/layout';
 
 if (typeof MapModule === 'function') {
   MapModule(Highcharts);
@@ -29,12 +36,104 @@ export class DashboardPage implements OnInit {
   totalEarnings = 553860000;
   orders = 445500;
   customer = 1230;
-  products = [
-    { id: 1, name: 'Laptop', price: 1200, category: 'Electronics' },
-    { id: 2, name: 'Smartphone', price: 800, category: 'Electronics' },
-    { id: 3, name: 'Shoes', price: 100, category: 'Fashion' },
-    { id: 4, name: 'Watch', price: 250, category: 'Accessories' },
+  columnDefs: ColDef[] = [
+    {
+      field: 'image',
+      headerName: '',
+      cellRenderer: CellComponent,
+    },
+    {
+      field: 'orderID',
+      headerName: dictionary.OrderID,
+      cellRenderer: CellComponent,
+    },
+    {
+      field: 'customer',
+      headerName: dictionary.Customer,
+      cellRenderer: CellComponent,
+    },
+    {
+      field: 'product',
+      headerName: dictionary.Product,
+      cellRenderer: CellComponent,
+    },
+    {
+      field: 'vendor',
+      headerName: dictionary.Vendor,
+      cellRenderer: CellComponent,
+    },
+    {
+      field: 'amount',
+      headerName: dictionary.Amount,
+      cellRenderer: CellComponent,
+    },
+    {
+      field: 'status',
+      headerName: dictionary.Status,
+      cellRenderer: CellComponent,
+    },
   ];
+  rowData = [
+    {
+      orderID: '#VZ2112',
+      customer: 'الکس اسمیت',
+      image: '../../../assets/images/avatar.jpg',
+      product: 'لباس',
+      vendor: 'مد زئوتیک',
+      amount: 10900,
+      status: 'در انتظار',
+    },
+    {
+      orderID: '#VZ2111',
+      customer: 'جانش براون',
+      image: '../../../assets/images/avatar-1.jpg',
+      product: 'لوازم آشپزخانه',
+      vendor: 'طراحی میکرو',
+      amount: 10900,
+      status: 'پرداخت شده',
+    },
+    {
+      orderID: '#VZ2110',
+      customer: 'آیان بوون',
+      image: '../../../assets/images/avatar-2.jpg',
+      product: 'لوازم جانبی دوچرخه',
+      vendor: 'فناوری نستا',
+      amount: 21500.0,
+      status: 'پرداخت شده',
+    },
+    {
+      orderID: '#VZ2109',
+      customer: 'پرزی مارک',
+      image: '../../../assets/images/avatar-3.jpg',
+      product: 'مبلمان',
+      vendor: 'راهکار سینتایس',
+      amount: 199000.0,
+      status: 'پرداخت نشده',
+    },
+    {
+      orderID: '#VZ2108',
+      customer: 'ویهان هودا',
+      image: '../../../assets/images/avatar-4.jpg',
+      product: 'کیف و کیف پول',
+      vendor: 'کارخانه تست',
+      amount: 330000,
+      status: 'پرداخت شده',
+    },
+  ];
+  modules = [ClientSideRowModelModule];
+  myTheme = themeQuartz.withParams({
+    fontFamily: 'Vazirmatn',
+    headerFontFamily: 'Vazirmatn',
+    cellFontFamily: 'Vazirmatn',
+  });
+  theme = 'ag-theme-alpine';
+
+  constructor(private layoutService: LayoutService) {
+    this.layoutService.theme.subscribe((theme) => {
+      this.theme =
+        theme === 'Light' ? 'ag-theme-alpine' : 'ag-theme-alpine-dark';
+    });
+  }
 
   ngOnInit() {
     this.loadChart();

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { dictionary } from '@dictionary/dictionary';
+import { LayoutService } from '../services/layout.service';
 
 @Component({
   selector: 'app-application',
@@ -23,12 +24,15 @@ export class ApplicationComponent implements OnInit {
     { title: 'Spam', url: '/app/folder/spam', icon: 'warning' },
   ];
 
-  constructor() {}
+  constructor(private layoutService: LayoutService) {}
 
   ngOnInit() {
     this.isDarkMode = localStorage.getItem('dark-mode');
     if (this.isDarkMode === 'enabled') {
       document.body.classList.add('dark-theme');
+      this.layoutService.changeTheme(
+        this.isDarkMode === 'enabled' ? 'Dark' : 'Light'
+      );
     }
   }
 
@@ -37,5 +41,8 @@ export class ApplicationComponent implements OnInit {
     const darkMode = body.classList.toggle('dark-theme');
     this.isDarkMode = darkMode ? 'enabled' : 'disabled';
     localStorage.setItem('dark-mode', darkMode ? 'enabled' : 'disabled');
+    this.layoutService.changeTheme(
+      this.isDarkMode === 'enabled' ? 'Dark' : 'Light'
+    );
   }
 }

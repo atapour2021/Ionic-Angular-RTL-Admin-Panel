@@ -2,6 +2,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
   name: 'persianNumber',
+  standalone: false,
 })
 export class PersianNumberPipe implements PipeTransform {
   transform(value: any): string {
