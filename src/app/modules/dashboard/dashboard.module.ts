@@ -11,8 +11,8 @@ import { PersianNumberPipe } from '@app/shared';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { AgGridModule } from 'ag-grid-angular';
 import { HighchartsChartModule } from 'highcharts-angular';
-import { DashboardPage } from './dashboard.page';
 import { CellComponent } from './components/cell/cell.component';
+import { DashboardPage } from './dashboard.page';
 
 @NgModule({
   imports: [

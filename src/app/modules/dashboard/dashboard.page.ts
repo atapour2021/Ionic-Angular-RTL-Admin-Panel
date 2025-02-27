@@ -1,18 +1,20 @@
 import { Component, OnInit } from '@angular/core';
+import { LayoutService } from '@app/layout';
 import { dictionary } from '@dictionary/dictionary';
 import worldMapData from '@highcharts/map-collection/custom/world.geo.json';
-import * as Highcharts from 'highcharts';
-import MapModule from 'highcharts/modules/map';
-import proj4 from 'proj4';
-import HC_map from 'highcharts/modules/map';
-import { style } from '@angular/animations';
 import {
   ClientSideRowModelModule,
   ColDef,
-  themeQuartz,
+  GridOptions,
+  themeAlpine,
 } from 'ag-grid-community';
+import * as Highcharts from 'highcharts';
+import {
+  default as HC_map,
+  default as MapModule,
+} from 'highcharts/modules/map';
+import proj4 from 'proj4';
 import { CellComponent } from './components/cell/cell.component';
-import { LayoutService } from '@app/layout';
 
 if (typeof MapModule === 'function') {
   MapModule(Highcharts);
@@ -121,21 +123,21 @@ export class DashboardPage implements OnInit {
     },
   ];
   modules = [ClientSideRowModelModule];
-  myTheme = themeQuartz.withParams({
+  isDarkMode = false;
+  themeAlpine = themeAlpine.withParams({
     fontFamily: 'Vazirmatn',
     headerFontFamily: 'Vazirmatn',
     cellFontFamily: 'Vazirmatn',
   });
-  theme = 'ag-theme-alpine';
 
   constructor(private layoutService: LayoutService) {
     this.layoutService.theme.subscribe((theme) => {
-      this.theme =
-        theme === 'Light' ? 'ag-theme-alpine' : 'ag-theme-alpine-dark';
+      this.isDarkMode = theme !== 'Light';
     });
   }
 
   ngOnInit() {
+    this.isDarkMode = this.layoutService.getTheme() !== 'Light';
     this.loadChart();
     this.loadMapChart();
     this.loadPieChart();

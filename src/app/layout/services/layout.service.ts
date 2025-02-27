@@ -12,4 +12,8 @@ export class LayoutService {
   changeTheme(theme: 'Dark' | 'Light') {
     this.theme.next(theme);
   }
+
+  getTheme(): string {
+    return localStorage.getItem('dark-mode') ? 'Dark' : 'Light';
+  }
 }

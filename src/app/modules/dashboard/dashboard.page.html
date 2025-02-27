@@ -272,21 +272,20 @@
         </ion-card>
       </ion-col>
       <ion-col sizeMd="8" size="12">
-        <ion-card class="card__bg__color">
-          <ion-card-content>
-            <ag-grid-angular
-              style="width: 100%; height: 420px"
-              [class]="theme"
-              [rowData]="rowData"
-              [columnDefs]="columnDefs"
-              [rowModelType]="'clientSide'"
-              [modules]="modules"
-              [enableRtl]="true"
-              [theme]="myTheme"
-            >
-            </ag-grid-angular>
-          </ion-card-content>
-        </ion-card>
+        <div
+          [ngClass]="isDarkMode ? 'ag-theme-alpine-dark' : 'ag-theme-alpine'"
+          class="ag-theme"
+        >
+          <ag-grid-angular
+            style="width: 100%; height: 420px"
+            [rowData]="rowData"
+            [columnDefs]="columnDefs"
+            [rowModelType]="'clientSide'"
+            [modules]="modules"
+            [theme]="themeAlpine"
+            [enableRtl]="true"
+          />
+        </div>
       </ion-col>
     </ion-row>
   </ion-grid>
