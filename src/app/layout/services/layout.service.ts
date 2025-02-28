@@ -14,6 +14,9 @@ export class LayoutService {
   }
 
   getTheme(): string {
-    return localStorage.getItem('dark-mode') ? 'Dark' : 'Light';
+    return localStorage.getItem('dark-mode') !== 'disabled' &&
+      localStorage.getItem('dark-mode') !== null
+      ? 'Dark'
+      : 'Light';
   }
 }
