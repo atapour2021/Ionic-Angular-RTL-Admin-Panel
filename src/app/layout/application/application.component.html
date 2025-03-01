@@ -10,21 +10,10 @@
           </div>
           <div class="menu__header__text">
             <ion-label>{{ dictionary.UserName }}</ion-label>
-            <ion-buttons slot="end">
-              <ion-button (click)="toggleDarkMode()">
-                <ion-icon
-                  [name]="
-                    isDarkMode === null || isDarkMode === 'disabled'
-                      ? 'moon'
-                      : 'sunny'
-                  "
-                ></ion-icon>
-              </ion-button>
-            </ion-buttons>
           </div>
         </div>
         <ion-list id="inbox-list">
-          @for (p of appPages; track p; let i = $index) {
+          @for (p of appPages; track $index) {
           <ion-menu-toggle auto-hide="false">
             <ion-item
               routerDirection="root"
@@ -34,30 +23,84 @@
               routerLinkActive="selected"
             >
               <ion-icon
-                aria-hidden="true"
                 slot="start"
-                [color]="
-                  isDarkMode === null || isDarkMode === 'disabled'
-                    ? 'light'
-                    : 'dark'
-                "
+                [color]="isDarkMode === 'enabled' ? 'dark' : 'light'"
                 [ios]="p.icon + '-outline'"
                 [md]="p.icon + '-sharp'"
               ></ion-icon>
-              <ion-label
-                [color]="
-                  isDarkMode === null || isDarkMode === 'disabled'
-                    ? 'light'
-                    : 'dark'
-                "
-                >{{ p.title }}</ion-label
-              >
+              <ion-label [color]="isDarkMode === 'enabled' ? 'dark' : 'light'">
+                {{ p.title }}
+              </ion-label>
             </ion-item>
           </ion-menu-toggle>
           }
         </ion-list>
       </ion-content>
     </ion-menu>
-    <ion-router-outlet id="main-content"></ion-router-outlet>
+    <div class="main-content" id="main-content">
+      <ion-header [translucent]="true">
+        <ion-toolbar>
+          <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+          </ion-buttons>
+          <ion-title>{{ dictionary.Dashboard }}</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="toggleDarkMode()">
+              <ion-icon
+                [name]="isDarkMode === 'enabled' ? 'sunny' : 'moon'"
+              ></ion-icon>
+            </ion-button>
+          </ion-buttons>
+          <ion-buttons slot="end">
+            <ion-button id="auto-trigger">
+              <ion-icon
+                slot="icon-only"
+                name="notifications-outline"
+              ></ion-icon>
+              <ion-badge *ngIf="notifications.length > 0" color="danger">
+                {{ notifications.length }}
+              </ion-badge>
+            </ion-button>
+          </ion-buttons>
+          <ion-popover trigger="auto-trigger" size="auto">
+            <ng-template>
+              <ion-content>
+                <ion-list class="ion-no-padding ion-no-margin">
+                  <ion-item
+                    *ngFor="let notification of notifications; let i = index"
+                  >
+                    <ion-avatar>
+                      <img [src]="notification.image" />
+                    </ion-avatar>
+                    <ion-label
+                      style="font-size: 10px !important; margin-right: 5px"
+                    >
+                      {{ notification.message }}
+                    </ion-label>
+                    <ion-button
+                      fill="clear"
+                      color="danger"
+                      (click)="removeNotification(notification)"
+                    >
+                      <ion-icon name="close-outline"></ion-icon>
+                    </ion-button>
+                  </ion-item>
+                </ion-list>
+                <ion-button
+                  expand="full"
+                  color="light"
+                  (click)="clearNotifications()"
+                >
+                  Clear All
+                </ion-button>
+              </ion-content>
+            </ng-template>
+          </ion-popover>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content [fullscreen]="true">
+        <ion-router-outlet></ion-router-outlet>
+      </ion-content>
+    </div>
   </ion-split-pane>
 </ion-app>

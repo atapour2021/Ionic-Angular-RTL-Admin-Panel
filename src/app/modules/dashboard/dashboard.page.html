@@ -1,52 +1,4 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-title>{{dictionary.Dashboard}}</ion-title>
-    <ion-buttons slot="end">
-      <ion-button id="auto-trigger">
-        <ion-icon slot="icon-only" name="notifications-outline"></ion-icon>
-        @if (notifications.length > 0) {
-        <ion-badge color="danger"> {{ notifications.length }} </ion-badge>
-        }
-      </ion-button>
-    </ion-buttons>
-    <ion-popover trigger="auto-trigger" size="auto">
-      <ng-template>
-        <ion-content>
-          <ion-list class="ion-no-padding ion-no-margin">
-            @for (notification of notifications; track $index) {
-            <ion-item>
-              <ion-avatar>
-                <img [src]="notification.image" />
-              </ion-avatar>
-              <ion-label style="font-size: 10px !important; margin-right: 5px">
-                {{ notification.message }}
-              </ion-label>
-              <ion-button
-                fill="clear"
-                color="danger"
-                (click)="removeNotification(notification)"
-              >
-                <ion-icon name="close-outline"></ion-icon>
-              </ion-button>
-            </ion-item>
-            }
-          </ion-list>
-          <ion-button
-            expand="full"
-            color="light"
-            (click)="clearNotifications()"
-          >
-            Clear All
-          </ion-button>
-        </ion-content>
-      </ng-template>
-    </ion-popover>
-  </ion-toolbar>
-</ion-header>
-<ion-content [fullscreen]="true">
+<div class="content">
   <ion-grid>
     <ion-row>
       <ion-col size="6">
@@ -332,4 +284,4 @@
       </ion-col>
     </ion-row>
   </ion-grid>
-</ion-content>
+</div>

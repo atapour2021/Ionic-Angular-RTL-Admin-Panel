@@ -23,6 +23,24 @@ export class ApplicationComponent implements OnInit {
     { title: 'Trash', url: '/app/folder/trash', icon: 'trash' },
     { title: 'Spam', url: '/app/folder/spam', icon: 'warning' },
   ];
+  showDropdown = false;
+  notifications = [
+    {
+      id: 1,
+      image: '../../../assets/images/avatar-2.jpg',
+      message: 'پیام جدید از جان',
+    },
+    {
+      id: 2,
+      image: '../../../assets/images/avatar-1.jpg',
+      message: 'سفارش شما ارسال شد',
+    },
+    {
+      id: 3,
+      image: '../../../assets/images/avatar-3.jpg',
+      message: 'یادآوری: جلسه در ساعت ۳ بعد از ظهر',
+    },
+  ];
 
   constructor(private layoutService: LayoutService) {}
 
@@ -44,5 +62,16 @@ export class ApplicationComponent implements OnInit {
     this.layoutService.changeTheme(
       this.isDarkMode === 'enabled' ? 'Dark' : 'Light'
     );
+  }
+
+  removeNotification(notification: any) {
+    this.notifications = this.notifications.filter(
+      (n) => n.id !== notification.id
+    );
+  }
+
+  clearNotifications() {
+    this.notifications = [];
+    this.showDropdown = false;
   }
 }

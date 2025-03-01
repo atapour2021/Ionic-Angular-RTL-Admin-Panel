@@ -1,30 +1,8 @@
-ion-header {
-  ion-toolbar {
-    --background: var(--ion-toolbar-bg-color) !important;
-
-    ion-badge {
-      position: absolute;
-      top: -5px;
-      left: -5px;
-      width: 17px;
-      height: 17px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 9px;
-      padding: 0;
-    }
-
-    ion-avatar {
-      width: 30px;
-      height: 30px;
-    }
-  }
-}
-
-ion-content {
-  --background: var(--page-bg-color);
+.content {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  margin: 3rem 0;
 }
 
 ion-card.sales__card {

@@ -130,25 +130,6 @@ export class DashboardPage implements OnInit {
     cellFontFamily: 'Vazirmatn',
   });
 
-  showDropdown = false;
-  notifications = [
-    {
-      id: 1,
-      image: '../../../assets/images/avatar-2.jpg',
-      message: 'New message from John',
-    },
-    {
-      id: 2,
-      image: '../../../assets/images/avatar-1.jpg',
-      message: 'Your order has been shipped',
-    },
-    {
-      id: 3,
-      image: '../../../assets/images/avatar-3.jpg',
-      message: 'Reminder: Meeting at 3 PM',
-    },
-  ];
-
   constructor(private layoutService: LayoutService) {
     this.layoutService.theme.subscribe((theme) => {
       this.isDarkMode = theme !== 'Light';
@@ -566,20 +547,5 @@ export class DashboardPage implements OnInit {
         enabled: false,
       },
     };
-  }
-
-  toggleDropdown() {
-    this.showDropdown = !this.showDropdown;
-  }
-
-  removeNotification(notification: any) {
-    this.notifications = this.notifications.filter(
-      (n) => n.id !== notification.id
-    );
-  }
-
-  clearNotifications() {
-    this.notifications = [];
-    this.showDropdown = false;
   }
 }
