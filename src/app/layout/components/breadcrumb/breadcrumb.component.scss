@@ -1,0 +1,14 @@
+ion-breadcrumbs {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+
+  ion-breadcrumb {
+    color: var(--ion-color-primary);
+    cursor: pointer;
+    &:last-child {
+      font-weight: bold;
+      color: var(--ion-color-dark);
+    }
+  }
+}

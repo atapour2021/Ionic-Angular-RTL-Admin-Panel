@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { dictionary } from '@dictionary/dictionary';
 
 export const CONTENT_ROUTES: Routes = [
   {

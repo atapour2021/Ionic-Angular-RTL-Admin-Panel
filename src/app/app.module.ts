@@ -4,7 +4,11 @@ import { RouteReuseStrategy } from '@angular/router';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
-import { ApplicationComponent, LayoutService } from '@app/layout';
+import {
+  ApplicationComponent,
+  BreadcrumbComponent,
+  LayoutService,
+} from '@app/layout';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -14,7 +18,7 @@ import localeFa from '@angular/common/locales/fa';
 registerLocaleData(localeFa);
 
 @NgModule({
-  declarations: [AppComponent, ApplicationComponent],
+  declarations: [AppComponent, ApplicationComponent, BreadcrumbComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },

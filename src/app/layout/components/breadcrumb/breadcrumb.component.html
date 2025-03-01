@@ -1,0 +1,7 @@
+<ion-breadcrumbs>
+  @for (crumb of breadcrumbs; track $index) { @if (crumb.label) {
+  <ion-breadcrumb [routerLink]="crumb.url">
+    {{ crumb.label }}
+  </ion-breadcrumb>
+  } }
+</ion-breadcrumbs>
