@@ -1,4 +1,5 @@
 export enum dictionary {
+  ClearAll = 'پاک کردن همه',
   Status = 'وضعیت',
   Vendor = 'فروشنده',
   Amount = 'مقدار',
