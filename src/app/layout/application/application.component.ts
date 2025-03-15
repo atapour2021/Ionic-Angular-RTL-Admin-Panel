@@ -17,6 +17,11 @@ export class ApplicationComponent implements OnInit {
       url: '/app/dashboard',
       icon: 'grid',
     },
+    {
+      title: dictionary.Products,
+      url: '/app/products',
+      icon: 'cube',
+    },
     { title: 'Outbox', url: '/app/folder/outbox', icon: 'paper-plane' },
     { title: 'Favorites', url: '/app/folder/favorites', icon: 'heart' },
     { title: 'Archived', url: '/app/folder/archived', icon: 'archive' },

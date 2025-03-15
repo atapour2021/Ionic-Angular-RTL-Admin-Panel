@@ -1,0 +1,25 @@
+.content {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  padding: 3.5rem 0;
+
+  .card__bg__color {
+    --background: var(--ion-card-bg-color);
+  }
+
+  .actions {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  ion-searchbar {
+    --color: var(--ion-text-color);
+    --placeholder-color: var(--ion-text-color);
+    --icon-color: var(--ion-text-color);
+    --clear-button-color: var(--ion-text-color);
+  }
+}

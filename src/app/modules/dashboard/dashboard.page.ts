@@ -5,7 +5,6 @@ import worldMapData from '@highcharts/map-collection/custom/world.geo.json';
 import {
   ClientSideRowModelModule,
   ColDef,
-  GridOptions,
   themeAlpine,
 } from 'ag-grid-community';
 import * as Highcharts from 'highcharts';

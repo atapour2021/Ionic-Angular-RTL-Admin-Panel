@@ -1,4 +1,13 @@
 export enum dictionary {
+  AddProduct = 'افزودن محصول',
+  Search = 'جستجو',
+  ProductList = 'لیست محصولات',
+  ProductImage = 'تصویر محصول',
+  Price = 'قیمت',
+  CurrentQty = 'تعداد فعلی',
+  Category = 'دسته بندی',
+  ProductName = 'نام محصول',
+  Products = 'محصولات',
   ClearAll = 'پاک کردن همه',
   Status = 'وضعیت',
   Vendor = 'فروشنده',

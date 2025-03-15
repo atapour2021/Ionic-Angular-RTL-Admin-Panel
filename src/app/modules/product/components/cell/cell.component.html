@@ -1,0 +1,16 @@
+@if (params.column.colId === 'image') {
+<div class="avatar__content">
+  <ion-avatar class="small-avatar">
+    <img [src]="params.value" />
+  </ion-avatar>
+</div>
+} @else if (params.column.colId === 'name') {
+<ion-label color="dark">{{ params.value }}</ion-label>
+} @else if (params.column.colId === 'category') {
+<ion-label color="dark">{{ params.value }}</ion-label>
+} @else if (params.column.colId === 'price' || params.column.colId ===
+'currentQty') {
+<ion-label color="dark">{{ params.value | number | persianNumber }}</ion-label>
+} @else if (params.column.colId === 'status') {
+<ion-label color="dark">{{ params.value }}</ion-label>
+}

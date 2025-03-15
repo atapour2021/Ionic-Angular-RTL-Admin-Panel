@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-import { dictionary } from '@dictionary/dictionary';
 
 export const CONTENT_ROUTES: Routes = [
   {
@@ -17,5 +16,10 @@ export const CONTENT_ROUTES: Routes = [
     path: 'dashboard',
     loadChildren: () =>
       import('@app/modules').then((m) => m.DashboardPageModule),
+  },
+
+  {
+    path: 'products',
+    loadChildren: () => import('@app/modules').then((m) => m.ProductPageModule),
   },
 ];

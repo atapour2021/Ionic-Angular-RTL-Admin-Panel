@@ -29,7 +29,6 @@
     "@fontsource/vazirmatn": "^5.1.1",
     "@highcharts/map-collection": "^2.3.0",
     "@ionic/angular": "^8.0.0",
-    "@swimlane/ngx-datatable": "^21.0.0-alpha.0",
     "@types/highcharts": "^5.0.44",
     "ag-grid-angular": "^33.1.0",
     "ag-grid-community": "^33.1.0",

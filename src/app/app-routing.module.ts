@@ -14,6 +14,10 @@ const routes: Routes = [
     component: ApplicationComponent,
     children: CONTENT_ROUTES,
   },
+  {
+    path: 'product',
+    loadChildren: () => import('./modules/product/product.module').then( m => m.ProductPageModule)
+  },
 ];
 
 @NgModule({
