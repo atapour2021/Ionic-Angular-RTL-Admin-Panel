@@ -1,8 +1,7 @@
-import { CommonModule } from '@angular/common';
 import { provideHttpClient } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { PersianNumberPipe } from '@app/shared';
+import { SharedModule } from '@app/shared';
 import { IonicModule } from '@ionic/angular';
 import { AgGridModule } from 'ag-grid-angular';
 import { HighchartsChartModule } from 'highcharts-angular';
@@ -12,14 +11,14 @@ import { DashboardPage } from './dashboard.page';
 
 @NgModule({
   imports: [
-    CommonModule,
+    SharedModule,
     FormsModule,
     IonicModule,
     DashboardPageRoutingModule,
     HighchartsChartModule,
     AgGridModule,
   ],
-  declarations: [DashboardPage, CellComponent, PersianNumberPipe],
+  declarations: [DashboardPage, CellComponent],
   providers: [provideHttpClient()],
 })
 export class DashboardPageModule {}

@@ -6,7 +6,7 @@ import { CONTENT_ROUTES } from '@app/shared';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'app',
+    redirectTo: '/app/dashboard',
     pathMatch: 'full',
   },
   {
@@ -16,7 +16,10 @@ const routes: Routes = [
   },
   {
     path: 'product',
-    loadChildren: () => import('./modules/product/product.module').then( m => m.ProductPageModule)
+    loadChildren: () =>
+      import('./modules/product/product.module').then(
+        (m) => m.ProductPageModule
+      ),
   },
 ];
 
